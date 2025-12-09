@@ -2,9 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import skfuzzy as fuzz
 
-# =============================
-# 1. MF Umur (Gaussian)
-# =============================
+# Umur
 x_umur = np.arange(0, 101, 1)
 muda = fuzz.gaussmf(x_umur, 25, 10)
 paruh_baya = fuzz.gaussmf(x_umur, 50, 10)
@@ -20,9 +18,7 @@ plt.ylabel('Derajat Keanggotaan')
 plt.legend()
 plt.grid(True)
 
-# =============================
-# 2. MF Skor Gejala (Triangular)
-# =============================
+# Skor Gejala
 x_gejala = np.arange(0, 101, 1)
 ringan = fuzz.trimf(x_gejala, [0, 0, 40])
 sedang = fuzz.trimf(x_gejala, [30, 50, 70])
@@ -38,9 +34,7 @@ plt.ylabel('Derajat Keanggotaan')
 plt.legend()
 plt.grid(True)
 
-# =============================
-# 3. MF Skor Risiko (Triangular)
-# =============================
+# SKor Risiko
 x_risiko = np.arange(0, 101, 1)
 rendah = fuzz.trimf(x_risiko, [0, 0, 40])
 sedang_r = fuzz.trimf(x_risiko, [30, 50, 70])
@@ -56,9 +50,7 @@ plt.ylabel('Derajat Keanggotaan')
 plt.legend()
 plt.grid(True)
 
-# =============================
-# 4. MF Diagnosis (Triangular)
-# =============================
+# Diagnosis
 x_diag = np.arange(0, 101, 1)
 negatif = fuzz.trimf(x_diag, [0, 0, 55])
 positif = fuzz.trimf(x_diag, [55, 100, 100])

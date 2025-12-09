@@ -20,11 +20,8 @@
           <h2 class="text-center header-title">
             Diagnosa Risiko Kanker Paru-Paru
           </h2>
-          <p class="text-center text-muted mb-4">
-            Menggunakan Metode Fuzzy Logic (Mamdani)
-          </p>
 
-          <!-- TAMPILAN HASIL -->
+          <!-- Tampilan Hasil -->
           {% if result %} {% if result.error %}
           <div class="alert alert-danger">{{ result.error }}</div>
           {% else %}
@@ -46,9 +43,8 @@
           </div>
           {% endif %} {% else %}
 
-          <!-- FORM INPUT -->
+          <!-- Form Input -->
           <form method="POST" action="/">
-            <!-- SECTION 1: PROFIL -->
             <div class="form-section">
               <h5 class="section-title">1. Profil Pasien</h5>
               <div class="row mb-3">
@@ -70,20 +66,13 @@
                     <option value="0">Perempuan</option>
                     <option value="1">Laki-laki</option>
                   </select>
-                  <small class="text-muted"
-                    >*Hanya sebagai faktor risiko minor</small
-                  >
                 </div>
               </div>
             </div>
 
-            <!-- SECTION 2: GEJALA FISIK -->
+            <!-- Gejala -->
             <div class="form-section">
               <h5 class="section-title">2. Gejala yang Dirasakan</h5>
-              <p class="text-muted small">
-                Pilih "Ya" jika Anda merasakan gejala berikut:
-              </p>
-
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label>Batuk (Coughing)</label>
@@ -130,7 +119,7 @@
               </div>
             </div>
 
-            <!-- SECTION 3: FAKTOR RISIKO -->
+            <!-- Risiko -->
             <div class="form-section">
               <h5 class="section-title">3. Faktor Risiko & Gaya Hidup</h5>
 
