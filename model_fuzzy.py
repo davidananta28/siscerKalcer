@@ -116,3 +116,36 @@ print(f"Recall   : {recall*100:.2f}%")
 print(f"F1 Score : {f1*100:.2f}%")
 print(f"Log Loss : {loss:.4f}")
 
+# 1. Grafik Bar Metrik Evaluasi
+metrics = ['Accuracy', 'Precision', 'Recall', 'F1 Score']
+values = [accuracy*100, precision*100, recall*100, f1*100]
+
+plt.figure(figsize=(8,5))
+plt.bar(metrics, values)
+plt.title("Evaluasi Kinerja Fuzzy Inference System (FIS)")
+plt.ylabel("Persentase (%)")
+plt.ylim(0, 110)
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.show()
+
+
+# 2. Grafik Distribusi Fuzzy Score
+plt.figure(figsize=(8,5))
+plt.hist(df[df['LUNG_CANCER']==1]['Fuzzy_Score'], bins=20, alpha=0.7, label='Positif (1)')
+plt.hist(df[df['LUNG_CANCER']==0]['Fuzzy_Score'], bins=20, alpha=0.7, label='Negatif (0)')
+plt.title("Distribusi Fuzzy Score Berdasarkan Label Asli")
+plt.xlabel("Fuzzy Score")
+plt.ylabel("Jumlah Data")
+plt.legend()
+plt.grid(linestyle='--', alpha=0.4)
+plt.show()
+
+
+# 3. Scatter Plot (Fuzzy Score vs Label Asli)
+plt.figure(figsize=(8,5))
+plt.scatter(df['Fuzzy_Score'], df['LUNG_CANCER'], alpha=0.6)
+plt.title("Scatter Plot Fuzzy Score vs Label")
+plt.xlabel("Fuzzy Score")
+plt.ylabel("Label Asli (0 / 1)")
+plt.grid(linestyle='--', alpha=0.4)
+plt.show()
